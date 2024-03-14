@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWebPage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+</head>
+<body>
+    <header>
+        <div class="navigation">
+            <input type="checkbox" id="check">
+            <label for="check" class="btn-check">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">MySkillsHub</label>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact</a></li>
+                <li><button class="login_popup">Login</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="login-model">
+        <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+        <div class="loginFormBox login">
+            <h2>Login Form</h2>
+            <form action="">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" required id="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" required id="password">
+                    <label for="password">Password</label>
+                </div>
+                
+                <div class="remember">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="#">Forget passowrd</a>
+                </div>
+                
+                <button type="submit" class="btn">Login</button>
+                
+                <div class="register">
+                    <p>Don't have an account ? <a href="#" class="register-link">Register</a></p>
+                    
+                </div>
+            </form>
+        </div>
+
+        <!-- register -->
+        <div class="loginFormBox register">
+            <h2>Registration Form</h2>
+            <form action="">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" required id="uname">
+                    <label for="uname">User Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" required id="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" required id="rpassword">
+                    <label for="password">Password</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox">Agree <a href="#">Terms & Conditions</a> </label>
+                    
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+
+                <div class="register">
+                    <p>Already have an Account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+        <!--regiter ended  -->
+    </div>
+
+<!--Main Start  -->
+    <div class="main-content">
+        <!-- Your main content here -->
+        <div class="container">
+            
+            <h1>My Content</h1>     
+            <h1>My Content</h1>     
+            <h1>My Content</h1>     
+            <h1>My Content</h1>     
+            <h1>My Content</h1>     
+        </div>
+    </div>
+    <!--Main ended  -->
+    
+    <div class="footer">
+        <footer>
+            <div class="footer-container">
+                <p>&copy; 2024 MySkillhub. All rirghts Reserved</p>
+                <div class="social-icons">
+                    <a href=""><i class="fab fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script>
+        const btnpopup = document.querySelector('.login_popup');
+        const coverbox = document.querySelector('.login-model');
+        const loginLink = document.querySelector('.login-link');
+        const registerLink = document.querySelector('.register-link');
+        const iconClose = document.querySelector('.icon-close');
+
+        function activateCoverBox(){
+            coverbox.classList.add('active')
+        }
+        function deactivateCoverBox(){
+            coverbox.classList.remove('active')
+        }
+        function activatePopup(){
+            coverbox.classList.add('active-popup')
+        }
+        function deactivatePopup(){
+            coverbox.classList.remove('active-popup')
+        }
+
+        registerLink.addEventListener('click',activateCoverBox)
+        loginLink.addEventListener('click',deactivateCoverBox)
+        btnpopup.addEventListener('click',activatePopup)
+        iconClose.addEventListener('click',deactivatePopup)
+    
+    
+    </script>
+</body>
+</html>

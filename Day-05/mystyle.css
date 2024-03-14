@@ -1,0 +1,19 @@
+h1{
+    background-color: rgb(140, 243, 93);
+}
+body{
+    background-color: wheat;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+p{
+    border: solid 1px;
+    text-decoration: underline;
+}
+ol{
+    list-style-type: none;
+}
+li{
+    display:block;
+    border: solid 2px rebeccapurple;
+    margin: 20px;
+}

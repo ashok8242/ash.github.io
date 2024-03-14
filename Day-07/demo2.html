@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul{
+        list-style-type: none;
+        
+        }
+        li{
+            background-color: aquamarine;
+            margin: 5px;
+            line-height: 1.5em;
+            display: inline-block;
+            width: 60px;
+        }
+        li:hover{
+            background-color: yellow;
+            cursor: pointer;
+        }
+        .header{
+            background-color: yellowgreen;
+        }
+        a{
+            text-decoration: none;
+            display: inline-block;
+            background-color: aquamarine;
+            width: 100px;
+            text-align: center;
+            height: 30px;
+            padding-top: 10px;
+            margin: 10px;
+            
+        }
+        
+      a:active{
+        background-color: red;
+        color: aliceblue;
+      }
+      a:visited{
+        color: green;
+      }
+      a:link{
+        color: yellow;
+      }
+      .nav{
+        float: left;
+      }
+      .nav::after{
+        content: '';
+        clear: both;
+      }
+      img{
+        float: left;
+      }
+ 
+    </style>
+</head>
+<body>
+    <!-- <ul>
+        <li>H</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul> -->
+    
+    <div class="header">
+        <img src="../Images/iconBala1.jpg">
+        <div class="nav">
+            <a href="./demo1.html">Home</a>
+        <a href="../Day-05/Media.html">About</a>
+        <a href="../Day-05/ExtrenalCSS.html">Services</a>
+        <a href="../Day-05/Misc.html">Contact</a>
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit modi illo alias officiis iusto obcaecati aperiam totam. Optio fugiat distinctio quia corrupti! Officiis assumenda hic nostrum tempore maiores nesciunt sit unde pariatur veniam, aut natus nemo! Nulla nam dolore doloribus ea, sed, dicta ab ipsa obcaecati dolor necessitatibus explicabo blanditiis.</p>
+</body>
+</html>

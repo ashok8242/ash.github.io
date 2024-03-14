@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="mybtn">Click</button>
+    <p id="mydate"></p>
+    <input type="text">
+    <p id="demo1">Static Content</p>
+    <p id="demo2">Hello</p>
+
+    <h1>Form Validation</h1>
+    <form name="myform" method="post" onsubmit=" return validatePwd()" action="bootstrap.html">
+
+        Password: <input type="password" name="pwd1" id="pwd1"><br>
+        <br>
+
+        Confirm Password: <input type="password" name="pwd2" id="pwd2"><br><br>
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <div id="button-group">
+        <button id="button-1">Button 1</button>
+        <button id="button-2">Button 2</button>
+        <button id="button-3">Button 3</button>
+        <button id="button-4">Button 4</button>
+        <button id="button-5">Button 5</button>
+    </div>
+
+    <script>
+        document.getElementById("demo1").innerHTML = "Dynamic Content"
+        document.getElementById("demo2").innerHTML = "DOM  Content"
+        document.getElementById("mybtn").onclick=displayDate;
+
+        function displayDate(){
+            document.getElementById("mydate").innerHTML=Date();
+        }
+
+
+        function validatePwd() {
+            var pwd = document.myform.pwd1.value;
+            var cpwd = document.myform.pwd2.value;
+
+            if (pwd.length < 6) {
+                alert("Passw must 6 Charaters");
+                return false;
+            }
+            if (pwd !== cpwd || cpwd == "") {
+                alert("Password and confirm password not same");
+                return false;
+            }
+
+        }
+        const newDiv = document.createElement("div");
+        newDiv.style.width = "200px";
+        newDiv.style.height = "200px";
+        newDiv.style.backgroundColor = "Red";
+        newDiv.style.border = "1px solid black"
+        newDiv.style.borderRadius = "10px"
+        newDiv.style.display = "flex";
+        newDiv.style.justifyContent = "center";
+        newDiv.style.alignItems = "center";
+
+
+        //   newDiv.appendChild(document.createTextNode('The man who mistook his wife for a hat'));
+        newDiv.appendChild(document.createElement("p"));
+        newDiv.id = "main"
+
+
+
+        newDiv.addEventListener('click', e => { console.log("JJJJJ"); })
+        newDiv.addEventListener('mouseover', e => { console.log("MouseOver"); })
+        newDiv.addEventListener('mouseout', e => { console.log("MouseOut"); })
+
+        const box1 = document.createElement("div");
+        box1.style.width = "100px";
+        box1.style.height = "100px";
+        box1.style.backgroundColor = "green";
+        box1.style.border = "1px solid yellow"
+        box1.style.borderRadius = "10px"
+        box1.innerHTML = "Box";
+        box1.style.color = "white"
+        box1.style.padding = "10px"
+
+
+        newDiv.appendChild(box1);
+        document.body.append(newDiv);
+
+
+        const buttons = document.getElementsByTagName("button");
+
+        const buttonPressed = e => {
+            console.log(e.target.id);  // Get ID of Clicked Element
+        }
+
+        for (let button of buttons) {
+            button.addEventListener("click", buttonPressed);
+        }
+    </script>
+
+</body>
+
+</html>

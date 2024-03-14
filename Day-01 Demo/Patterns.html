@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patterns</title>
+</head>
+<body>
+        <h3>Patterns In JavaScript</h3>
+
+        <script>
+            let num1 = 0;
+            let num2 = 1;
+            let sum = num1 + num2;
+            
+            let add = function(num1,num2){
+                return num1+num2;
+            }
+            console.log(add(8,9));
+
+            let Mul = (num1,num2)=>{
+                return num1*num2;
+            }
+            console.log(Mul(8,9));
+
+            let addition = ((a,b)=>a+b);
+            console.log(addition(8,9));
+
+            function isPrime(num){
+                if(num <= 1) {
+                    return false;
+                }
+                for(let i = 2; i <= Math.sqrt(num); i++ ){
+                    if(num % i == 0){
+                        return false;
+                    }
+                }
+                return true
+            }
+        
+
+            function Patterns1(row){
+                let str= '';
+                for(let i = 0; i <= row; i++){
+                    for(let col = 0; col <= i; col++){
+                        str += i+"&nbsp;"
+                    }
+                    str += '<br>'
+                }
+                return str;
+            }  
+            document.write(Patterns1(5)+"<br>");
+
+            function Patterns2(row){
+                let str= '';
+                for(let i = 0; i <= row; i++){
+                    for(let col = 0; col <= i; col++){
+                        str += col+"&nbsp;"
+                    }
+                    str += '<br>'
+                }
+                return str;
+            }  
+            document.write(Patterns2(5)+"<br>");
+            document.write("Pattern 3"+"<br>");
+
+            function Patterns3(row){
+                let str= '';
+                for(let i = 0; i <= row; i++){
+                    for(let col = 0; col <= row-i; col++){
+                        str += col+"&nbsp;"
+                    }
+                    str += '<br>'
+                }
+                return str;
+            }  
+            document.write(Patterns3(5)+"<br>");
+
+            document.write("Pattern 4"+"<br>");
+            function Patterns4(num){
+                let str= '';
+                for(let row = 0; row <= num; row++){
+                    for(let col = num-row; col > 0; col--){
+                        str += "&nbsp;&nbsp;&nbsp;"
+                    }
+                    for(let col = 1; col <= row; col++){
+                        str += "*"+"&nbsp;"
+                    }
+                    str += '<br>'
+                }
+                return str;
+            }  
+            document.write(Patterns4(5)+"<br>");
+
+            document.write("Pattern 5"+"<br>");
+            function Patterns5(num){
+                let str= '';
+                for(let row = 0; row <= 2*num; row++){
+                    let colcount = row > num ? 2*num - row : row;
+                    for(let col = 1; col <= colcount; col++){
+                        str += "*"+"&nbsp;"
+                    }
+                    str += '<br>'
+                }
+                return str;
+            }  
+            document.write(Patterns5(5)+"<br>");
+            
+            document.write("Pattern 6"+"<br>");
+            function Patterns6(num){
+                let str= '';
+                for(let row = 0; row <= num; row++){
+                    for(let s = 1; s <= num-row; s++){
+                        str += "&nbsp;&nbsp;"
+                    }
+                    for(let col = 0; col <= row; col++){
+                        str += "*"+"&nbsp;&nbsp;"
+                    }
+                    str += '<br>'
+                }
+                return str;
+            }  
+            document.write(Patterns6(6)+"<br>");
+
+            function Patterns7(num){
+                let str= '';
+                let count = 0
+                for(let row = 0; row <= 2*num; row++){
+                    count++;
+                    let colcount = row > num ? 2*num - row : row;
+                    for(let s = 1; s <= num-colcount; s++){
+                        str += "&nbsp;&nbsp;"
+                    }
+                    for(let col = 0; col <= colcount; col++){
+                        str += "*"+"&nbsp;&nbsp;"
+                    }
+                    str += '<br>'
+                }
+                return str;
+            }  
+            document.write(Patterns7(5)+"<br>");
+            
+            
+        </script>
+</body>
+</html>

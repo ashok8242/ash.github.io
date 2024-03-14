@@ -1,0 +1,368 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../Images/scenery1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+header{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+    
+    display: block;
+    padding-left: 40px;
+}
+header .navigation{
+    display: flex;
+    justify-content: space-between;
+}
+header .navigation ul{
+    list-style-type: none;
+    float: right;
+    margin-right: 20px;
+    
+
+}
+header .navigation ul li{
+    display: inline-block;
+    line-height: 50px;
+    margin:  0 5px;
+}
+
+header .navigation ul li a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase
+}
+header .navigation ul li a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 90%;
+    height: 3px;
+    border-radius: 5px;
+    transform-origin: 50% 50%;
+    transform: scaleX(0);
+    transition: transform .5s;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    background: linear-gradient(to right, white,white);
+}
+header .navigation ul li a:hover::after{
+    transform-origin: right;
+    transform: scaleX(1);
+}
+
+header .navigation ul li .login_popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    margin-left: 40px;
+}
+header .navigation ul li .login_popup:hover{
+    background-color: burlywood;
+    color: black;
+}
+
+
+
+.btn-check{
+    font-size: 25px;
+    color: aliceblue;
+    line-height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+@media screen and (max-width:970px){
+    .btn-check{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 40%;
+        height: 100vh;
+        background: gray;
+        top: 100px;
+        left: -100%;
+        text-align: left;
+        transition: all .5s;
+        border: 2px solid aliceblue;
+        border-radius: 6px;
+        box-shadow: 0 0 30px rgba(00,0,0,0.5);
+    }
+    header .navigation ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;   
+    }
+    header .navigation ul li a{
+        font-size: 20px;
+
+    }
+    header{
+        backdrop-filter: blur(0px);
+    }
+    #check:checked ~ul{
+        left: 0;
+    }
+   
+}
+.logo{
+    color: white;
+    font-size: 25px;
+    line-height: 50px;
+    padding: 0;
+    font-weight: bold;
+}
+
+.login-model{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    overflow: hidden;
+    transition: transform .5s ease, height 0.2s, border-color 0.5s ease ;
+    z-index: 15;
+}
+
+.login-model:hover{
+    border-color: white;
+    animation: border-glow 1s infinite alternate;
+}
+@keyframes border-glow {
+    from{
+        border-color: #f6f8f6;
+        box-shadow: 0 0 20px rgba(00,0,0,0.5);
+    }
+    to{
+        border-color: #fff;
+        box-shadow: 0 0 20px rgba(255,255,255,1);
+    }
+}
+
+.login-model.active-popup{
+    transform: scale(1);
+}
+.login-model.active{
+    height: 520px;
+}
+.login-model .loginFormBox{
+    width: 100%;
+    padding: 40px;
+}
+
+.login-model .loginFormBox.login{
+    transition: transform 0.50s ease;
+    transform: translateX(0);
+}
+.login-model.active .loginFormBox.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.login-model .loginFormBox.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.login-model.active .loginFormBox.register{
+    transition: transform 0.50s ease;
+    transform: translateX(0);
+}
+.icon-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f6f8f6;
+    border-radius: 50%;
+}
+
+.icon-close:hover{
+    background-color: aliceblue;
+    color: red;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.loginFormBox h2{
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.loginFormBox .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0px;
+}
+.loginFormBox .input-box label{
+    position: absolute;
+    top: 60%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -3px;
+    color: #f6f8f6;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 15px;outline: none;
+    padding: 0 35px 0 15px;
+}
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: black;
+    line-height: 57px;
+}
+.remember{
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    margin: -12px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember label input{
+    accent-color:#000;
+    margin-right: 3px;
+}
+.remember a{
+    color: #000;
+    text-decoration: none;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    background-color: #051904;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 1em;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.register{
+    font-size: 0.9em;
+    color: #f6f8f6;
+    text-align: center;
+    font-family: 500;
+    margin: 25px 0 10px;
+}
+.register p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+.register p a:hover{
+    text-decoration: none;
+}
+
+
+/* Footer */
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2) ;
+    backdrop-filter: blur(10px);
+}
+.footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 10px;
+}
+.social-icons a{
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+transition: color 0.3s ease-in-out;
+
+}
+.main-content {
+    padding-top: 20px; /* Adjust this value to match the height of your header */
+    padding-bottom: 80px; /* Adjust this value to match the height of your footer */
+    background-color: transparent; /* Make the main content area transparent */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 80px; /* Adjust this value to match the height of your header */
+    bottom: 80px; /* Adjust this value to match the height of your footer */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myp">Hello</p>
+    <button id="btn">Hello</button>
+    <div>
+        <p id="child1">This is the first child element</p>
+        <p id="child2">This is the second child element</p>
+      </div>
+      <div id="container">
+        <!-- Existing content in the container -->
+        <p>This is the container element.</p>
+    </div>
+    <script>
+        // alert("Hello");
+        // console.log(confirm("Do u want?"));
+        // prompt("dd");
+        // const myElements = document.getElementsByTagName("p");
+        // const myele = document.getElementById("myp")
+        // myele.innerHTML = "Linked";
+        const btn = document.getElementById("btn");
+        // Select the container element by its id
+const container = document.getElementById("container");
+
+// Create a new div element
+const newDiv = document.createElement("div");
+newDiv.textContent = "This is a new div element.";
+
+// Create a new text node
+const newText = document.createTextNode("This is a new text node.");
+container.appendChild(newDiv);
+container.appendChild(newText);
+        
+    </script>
+</body>
+</html>

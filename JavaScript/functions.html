@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h1>Functions</h1>
+    
+    <script>    
+        document.write(add(5,8));
+    
+
+        function add(num1,num2){
+            return num1 + num2;
+        }
+        document.write("Add function is: ", add(2,5)+"<br>")
+         let sum = function(n,m){
+            return n + m
+        }
+        document.write("SUM function is: ", sum(2,9)+"<br>")
+        
+        let greet = ()=>{
+            return "Hello Good Morning"
+        }
+        document.write("Greet function is: ", greet()+"<br>")
+
+        let wish = (name="Ashok")=>"Hello "+name
+        document.write("Wish function is: ", wish()+"<br>")
+        var list = [1,2,3,4,5,6,7,8];
+         var newList = list.filter(n=> (n%3 == 0)||(n%5 == 0))
+                        .map(n=>Math.pow(n,3))
+                        .reduce((sum,num)=>sum+num,0);
+         var sum1 = list.reduce((sum,cuurent)=>sum+cuurent,0)
+
+         document.write(newList+"<br>");
+         document.write(sum1+"<br>");
+         function fact(n){
+            if(n <= 1){
+                return 1;
+            }
+            return n * fact(n-1)
+         }
+         document.write("Factorial of 1: "+fact(1)+"<br>");
+         document.write("Factorial of 2: "+fact(2)+"<br>");
+         document.write("Factorial of 3: "+fact(3)+"<br>");
+         document.write("Factorial of 4: "+fact(4)+"<br>");
+         document.write("Factorial of 5: "+fact(5)+"<br>");
+         document.write("Factorial of 10: "+fact(10)+"<br>");
+         document.write("Factorial of 14: "+fact(14)+"<br>");
+         document.write("Factorial of 15: "+fact(15)+"<br>");
+         document.write("Factorial of 16: "+fact(16)+"<br>");
+    </script>
+</body>
+</html>

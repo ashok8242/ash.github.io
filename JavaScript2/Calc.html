@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background: linear-gradient(45deg, rgb(32, 32, 32), rgb(94, 91, 91)); */
+        }
+        .container{
+            border: 1px solid black;
+            padding: 20px;
+        }
+        #inputbox{
+            width: 300px;
+            border: 1px dotted darkcyan;
+            padding: 20px;
+            margin: 10px;
+            background: transparent;
+            font-size: 30px;
+            text-align: right;
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+            border-radius: 20px;
+        }
+        button{
+            border: none;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            border-radius: 50%;
+            background: transparent;
+            color: rgb(7, 0, 0);
+            font-size: 20px;
+            box-shadow: 0px 0px 5px rgb(243, 0, 0);
+            cursor: pointer;
+        }
+        .equalbtn{
+            background-color: cadetblue;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="inputbox" id="inputbox" >
+        <div class="btngroup">
+            <button>AC</button>
+            <button>Del</button>
+            <button>%</button>
+            <button class="operator">/</button>
+        </div>
+        <div class="btngroup">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">*</button>
+        </div>
+        <div class="btngroup">
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">-</button>
+        </div>
+        <div class="btngroup">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">+</button>
+        </div>
+        <div class="btngroup">
+            <button>00</button>
+            <button>0</button>
+            <button>.</button>
+            <button class="equalbtn">=</button>
+        </div>
+    </div>
+
+    <script>
+        const inputbox = document.getElementById('inputbox');
+        const btns = document.querySelectorAll('button');
+        let string = '';
+        let previousChar = '';
+        btns.forEach(
+            btn=>{ 
+            btn.addEventListener('click',(e)=>{
+                let currentChar = e.target.innerHTML;
+
+                if(currentChar === "="){
+                    string = eval(string);
+                }
+                else if(currentChar === "AC"){
+                    string = '';
+                }
+                 else if(currentChar === "Del"){
+                    string = string.substr(0,string.length-1);
+                }
+                else if(currentChar == '.' && string.includes(".")){
+                   return;
+                }
+                else if(previousChar && "+-*/%".includes(previousChar) && "+-*/%".includes(currentChar)){
+                    string = string.substr(0,string.length-1) + currentChar;
+                }
+
+                
+                // else if(previousChar == '+' && (currentChar == '+'||currentChar=='-'||
+                //                currentChar=='*'||currentChar=='/'||currentChar=='%')      ||
+                //         previousChar == '-' && (currentChar == '+'||currentChar=='-'||currentChar=='*'||currentChar=='/'||currentChar=='%') ||
+                //         previousChar == '*' && (currentChar == '+'||currentChar=='-'||currentChar=='*'||currentChar=='/'||currentChar=='%') ||
+                //         previousChar == '/' && (currentChar == '+'||currentChar=='-'||currentChar=='*'||currentChar=='/'||currentChar=='%')||
+                //         previousChar == '%' && (currentChar == '+'||currentChar=='-'||currentChar=='*'||currentChar=='/'||currentChar=='%')){
+                //     string = string.substr(0,string.length-1) + currentChar;
+                // }
+                else{
+                    string += currentChar;
+                }
+                inputbox.value = string;
+                previousChar = currentChar;
+            })
+        })
+
+    </script>
+</body>
+</html>

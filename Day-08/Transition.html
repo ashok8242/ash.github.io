@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+        div{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+        div>h1{
+            width: 200px;
+            padding: 20px;
+            border: 1px solid red;
+            transition: width 2s, transform 4s;
+           transition-timing-function: ease-in;
+            background-color: aquamarine;
+        }
+        div>h1:hover{
+            width: 400px;
+            /* transform: rotate(360deg); */
+            transform: rotateZ(180deg);
+            /* transform: skew(30deg, -20deg); */
+
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>TalentSprint</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            font: normal 16px cursive;
+            margin: 0px;
+        }
+        .container {
+            background-color: antiquewhite;
+            height: 40px;
+            padding: 5px;
+        }
+        .header {
+            float: left;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        .nav {
+            float: right;
+        }
+        .nav a {
+            text-decoration: none;
+            margin-left: 10px;
+            color: black;
+            font-size: 20px;
+        }
+        .nav a:hover, .nav a:active {
+            color: red;
+        }
+        img{
+            float: left;
+            margin: 10px;
+            height: 50px;
+        }
+        .container1{
+         clear: both;
+        }
+        .bax{
+            border: 2px solid red;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            margin: 20px;
+        }
+        #box1{
+            box-sizing: border-box;
+        }
+        .box{
+            border: 1px solid red;
+            width: 300px;
+            /* flex-basis: 100px; */
+            height: 100px;
+            margin: 5px;
+            flex: 1 0 0px;
+        }
+        .box:nth-of-type(2n){
+            align-self: center;
+        }
+        .box1{
+            background-color: antiquewhite;
+            
+           
+        }
+        .box2{
+            background-color: aqua;
+           
+        }
+        .box3{
+            background-color: burlywood;
+            
+        }
+        .box4{
+            background-color: yellowgreen;
+            
+        }
+        .flexcontainer{
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            /* flex-wrap: wrap; */
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="header" href="#">TalentSprint</a>
+        <div class="nav">
+            <a href="../Day-05/CSS.html">Day01</a>
+            <a href="../Day-05/demo1.html">Day02</a>
+            <a href="../Day-05/ExtrenalCSS.html">Day03</a>
+            <a href="../Day-05/Misc.html">Day04</a>
+            <a href="../Day-05/Media.html">Day05</a>
+            <a href="../Day-05/internalCSS.html">Day06</a>
+        </div>
+    </div>
+   
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+    <h1 id="second">TalentSprint</h1>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+    </ul>
+    <ol>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+    </ol>
+    <img src="../Images/balayya1.jpg" alt="Balayya">
+    <p id="newPara">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus consectetur ab, debitis officia tenetur fuga cum illo recusandae nesciunt, magnam quis, voluptatem beatae non fugit nisi ipsa laboriosam fugiat optio aspernatur. Quo, dolores facilis optio hic beatae rem iste debitis consequatur illo doloremque unde ex nesciunt labore placeat. Iste, ex.
+    </p> 
+    <div class="container1">
+        <div class="bax" id="box1">
+            <h1>Box1</h1>
+        </div>
+        <div class="bax" id="box2">
+            <h1>Box2</h1>
+        </div>
+    </div>
+    <div class="flexcontainer">
+        <div class="box box1">One</div>
+        <div class="box box2">Two</div>
+        <div class="box box3">Three</div>
+        <div class="box box4">Four</div>
+        <div class="box box1">One</div>
+        <div class="box box2">Two</div>
+        <div class="box box3">Three</div>
+        <div class="box box4">Four</div>
+        <div class="box box1">One</div>
+        <div class="box box2">Two</div>
+        <div class="box box3">Three</div>
+        <div class="box box4">Four</div>
+        <div class="box box1">One</div>
+        <div class="box box2">Two</div>
+        <div class="box box3">Three</div>
+        <div class="box box4">Four</div>
+        <div class="box box1">One</div>
+        <div class="box box2">Two</div>
+        <div class="box box3">Three</div>
+        <div class="box box4">Four</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDO App</title>
+    <link rel="stylesheet" href="todoApp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>ToDo App<i class="fa-regular fa-clipboard"></i></h2>
+        <div class="box">
+            <input type="text" placeholder="Enter your task" id="input-box" maxlength="25">
+          <button onclick="addTask()">AddTask</button>
+        </div>
+        <div >
+            <ul class="listContainer" id="listContainer">
+                
+            </ul>
+        </div>
+    </div>
+    
+
+    <script>
+        const inputBox = document.getElementById("input-box");
+        const taskList = document.getElementById("listContainer");
+        function addTask() {
+            if (inputBox.value === "") {
+                alert("Enter a Task before you add task")
+            }else{
+                let task = document.createElement("li");
+                task.textContent = inputBox.value;
+                taskList.append(task);
+
+                let span = document.createElement('span');
+                span.textContent = '\u00d7';
+                task.appendChild(span);
+                saveData();
+            }
+            inputBox.value = '';
+          
+        } 
+        taskList.addEventListener('click',(ele)=>{
+            if(ele.target.tagName == "LI"){
+                ele.target.classList.toggle('checked');
+                saveData();
+            }else if(ele.target.tagName == "SPAN"){
+                ele.target.parentElement.remove();
+                saveData()
+            }
+        })
+        function saveData(){
+            localStorage.setItem("tasks", taskList.innerHTML);
+        }
+        function ShowData(){
+            taskList.innerHTML = localStorage.getItem("tasks")
+        }
+        ShowData();
+    </script>
+</body>
+</html>

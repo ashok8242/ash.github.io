@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Forms</title>
+  </head>
+  <body>
+    <form action="../Day-04/AssignmentTable.html">
+      <label for="fname">First Name: </label
+      ><input
+        id="fname"
+        type="text"
+        maxlength="15"
+        minlength="4"
+        placeholder="Enter your name"
+        required
+      />
+      <br />
+      <hr />
+      <label for="age">Age: </label><input type="number" placeholder="Enter your Age" id="age" />
+      <br />
+      <hr />
+      <label>Email: </label
+      ><input type="email" placeholder="Enter your email" />
+      <br />
+      <label>Phone Number: </label>
+      <input type="tel" max="10" placeholder="Enter your Phone Number" />
+      <br />
+      <hr />
+      <label>Gender:</label>
+      <input type="radio" name="gender"><label>Male</label>
+      <input type="radio" name="gender"><label>Female</label>
+      <hr>
+      <label>Date Of Birth</label>
+      <input type="date"> 
+      <hr>
+      <hr>
+      <label>Fav Colour</label>
+      <input type="color"> 
+      <hr>
+      <label>Address:</label>
+      <textarea cols="50" rows="4">Write your Adress here</textarea>
+      <hr>
+      <label>Skills: </label>
+      <input type="checkbox" id="html">
+      <label for="html">HTML</label>
+
+      <input type="checkbox">
+      <label>CSS</label>
+      <input type="checkbox">
+      <label>JavaScript</label>
+      <hr>
+      <label>City:</label>
+      <Select size="1">
+          <option >Hyderabad</option>
+          <option selected>---</option>
+        <option>Chennai</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+      </Select>
+      <hr>
+
+      <input type="submit" value="Check" />
+    </form>
+  </body>
+</html>

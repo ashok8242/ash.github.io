@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .abc{
+            color: red;
+            border: 1px dotted green;
+            border-radius: 10px;
+            background-color: aqua;
+        }
+        .xyz{
+            background-color: orange;
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            border: 1px solid red;
+            display: grid;
+            place-items: center;
+        }
+        .xyz1{
+            background-color: rgb(81, 255, 0);
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            border: 1px solid rgb(55, 1, 250);
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="heading1">Document Object Model</h1>
+    <p id="para">This is Paragraph</p>
+    <button id="btn" onclick="alert('Have a Good Day')" >Click</button>
+
+    <div class="btn-grp">
+        <button id="btn1" class="btnclass">Button 1</button>
+        <button id="btn2" class="btnclass">Button 2</button>
+        <button id="btn3" class="btnclass">Button 3</button>
+        <button id="btn4" class="btnclass">Button 4</button>
+        <button id="btn5" class="btnclass">Button 5</button>
+    </div>
+    
+    
+
+   
+    
+    <script>
+        let para_ele = document.getElementById('para');
+        para_ele.innerHTML = "Good Morning Ashok Kumar"
+        // console.log(para_ele.innerHTML);
+
+        const head = document.getElementById('heading1');
+        head.innerHTML = "TalentSprint"
+        head.className = 'abc'
+       
+        const newbox = document.createElement('div');
+        const box = document.createElement('div');
+        
+        newbox.className = 'xyz'
+        box.className = 'xyz1'
+        
+        document.body.append(newbox);
+        newbox.append(box)
+
+        // newbox.addEventListener('click',(e)=>{console.log("Clicked");})
+        newbox.addEventListener('mouseenter',(e)=>{console.log("You entered the Dragon")})
+        newbox.addEventListener('mouseout',(e)=>{console.log("You are leaving me alone")})
+        newbox.addEventListener('mouseup',(e)=>{console.log("Clicked Out")})
+        newbox.addEventListener('mousedown',(e)=>{console.log("Clicked In")})
+
+
+        box.addEventListener('mouseover',(e)=>{console.log("You entered the New Area")})
+   
+        const btns = document.getElementsByTagName('button');
+        
+        for(btn of btns){
+            btn.addEventListener('click',(e)=>{console.log(e.target.innerHTML);})
+        }
+
+   </script>
+</body>
+</html>
