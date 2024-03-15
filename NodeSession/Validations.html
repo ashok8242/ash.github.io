@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validations</title>
+
+</head>
+<body>
+    <div class="container">
+        <!-- <p id="para"></p>
+        <button onclick="changeDate()">Click</button> -->
+
+        <form action="../JavaScript2/todoApp.html" onsubmit="return Validate()">
+            <div class="row">
+                <input type="password" id="pwd">
+            </div>
+            <div class="row">
+                <input type="password" id="pwd1">
+            </div>
+            <div class="row">
+                <input type="submit" value="Check" id="check" >
+            </div>
+        </form>
+    </div>     
+
+    <script>
+        // function changeDate(){
+        //     const para = document.getElementById("para");
+        //     console.log(para);
+        //     para.innerHTML = new Date();
+        // }
+
+            function Validate(){
+                const pwd = document.getElementById("pwd");
+                const pwd1 = document.getElementById("pwd1");
+                const btn = document.getElementById("check");
+                if(pwd.value == ""){
+                    alert("Enter some text")
+                    return false;
+                }else if( pwd.value.length <= 6){
+                    alert("Minimum 6 characters required");
+                    
+                    return false;
+                }else if(pwd.value !== pwd1.value){
+                    alert("Passwords entered are not same");
+                    return false;
+                }
+                return true
+            }
+    </script>
+</body>
+</html>
