@@ -9,14 +9,14 @@ function wishMe(name){
 console.log(wishMe("Ashok Kumar"));
 
 function printTable(num){
-    let str ='';
+
 
     let i = 1;
     while( i<= 10){
-        str += `${num} X ${i} = ${num*i}`+"\n";
+        console.log(`${num} X ${i} = ${num*i}`);
         i++;
     }
-    return str;
+  return;
 }
 console.log(printTable(5));
 console.log(printTable(9));
@@ -28,3 +28,11 @@ function isEven(num){
 
 console.log(isEven(12));
 console.log(isEven(15));
+
+function fact(n){
+    if(n <= 1){
+        return 1;
+    }
+    return n * fact(n-1);
+}
+console.log(fact(5));
